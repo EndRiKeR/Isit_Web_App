@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ data.order.title }}{% endblock %}
+
+{% block content %}
+<div class='data'>
+    {% include 'order_about.html' with element=data.order %}
+</div>
+{% endblock %}

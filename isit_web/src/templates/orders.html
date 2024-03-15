@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}Главная страница{% endblock %}
+
+{% block content %}
+<div class='data'>
+    <ul>
+        {% for order in data.orders %}
+        {% include 'order_element.html' with element=order %}
+        {% empty %}
+            <a class='default-font'>Ха-Ха-Ха! Держи гуся!</a>
+            <img src="/../static/img/goose.png">
+        {% endfor %}
+    </ul>
+    <form action="sendText" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input name="text" type="text"><br><br>
+        <input type="submit" value="Submit" >
+    </form>
+</div>
+{% endblock %}

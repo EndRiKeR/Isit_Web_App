@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="en" class="h-100">
+<head>
+    <meta charset="utf-8">
+
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
+    <title>{% block title %}{% endblock %}</title>
+
+</head>
+<body class='background'>
+    <a class='title-font'>Магазин Издательства Формат-М</a>
+    {% block content %}{% endblock %}
+</body>
+</html>

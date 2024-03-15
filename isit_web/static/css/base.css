@@ -1,0 +1,47 @@
+.title-font
+{
+  font-size: 35px;
+  color: rgb(234, 238, 0);
+  background: #146f99;
+  border-radius: 10px;
+  position: absolute;
+  padding: 20px;
+  overflow: auto;
+}
+
+.book-name
+{
+  font-weight: bold;
+}
+
+.default-font
+{
+  font-size: 20px;
+  color: rgb(0, 0, 238);
+}
+
+.background {
+  background: #ffffff;
+  background-image: url("../img/Back.png");
+  background-position: top right;
+  background-repeat:no-repeat;
+
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  padding: 40px;
+  top: 0;
+  left: 0;
+  overflow: auto;
+}
+
+.data {
+  background: #4ba1c9c8;
+  background-position: center;
+  padding: 20px;
+  width: 600px;
+  height: 800px;
+  margin: 50px auto;
+  border-radius: 20px;
+}
+
