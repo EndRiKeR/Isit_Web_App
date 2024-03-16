@@ -54,8 +54,9 @@ ROOT_URLCONF = 'isit_web.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / "/isit_web/src/templates",
-                 "D:/myProgects/repLab/isit_web/isit_web/src/templates"],
+        'DIRS': [BASE_DIR / "isit_web/src/templates",
+                 "D:/myProgects/repLab/isit_web/isit_web/src/templates",
+                 'D:/ForBMSTU/Work/Projects/Isit_Web_App/isit_web/src/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -122,11 +123,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-#STATICFILES_DIRS = [
-#    BASE_DIR / 'isit_web/isit_web/static',
-#    "D:/myProgects/repLab/isit_web/isit_web/static"
-#]
 
 STATIC_ROOT = ''
 STATIC_URL = '/static/'
