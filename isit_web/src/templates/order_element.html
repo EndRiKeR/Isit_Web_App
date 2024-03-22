@@ -1,8 +1,10 @@
-<div>
-    <li>
-        <img class='default-font' src="{{element.src}}" width='120' height='160' alt="картинка">
-        <a class='default-font book-name'>{{ element.title }}.</a>
-        <a class='default-font'>Стоимость: {{ element.price}} руб.</a>
-        <a class='default-font' href="{% url 'order_url' element.id %}">Подробнее...</a>
-    </li>
+<div class="card">
+    <div class="card-image">
+        <img src="{{element.src}}" width='120' height='160' alt="Красивая картинка">
+    </div>
+    <div class="card-content">
+        <h3>{{ element.title }}.</h3>
+        <p>{{ element.price}} рублей</p>
+        <a href="{% url 'order_url' element.id %}">Подробнее</a>
+    </div>
 </div>

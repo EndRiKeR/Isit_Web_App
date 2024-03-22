@@ -1,10 +1,9 @@
-.title-font
-{
+
+.title-font {
   font-size: 35px;
   color: rgb(234, 238, 0);
-  background: #146f99;
+  background: rgb(7, 83, 24);
   border-radius: 10px;
-  position: absolute;
   padding: 20px;
   overflow: auto;
 }
@@ -14,34 +13,158 @@
   font-weight: bold;
 }
 
-.default-font
-{
+.default-font {
   font-size: 20px;
-  color: rgb(0, 0, 238);
+  color: rgb(7, 83, 24);
 }
-
 .background {
-  background: #ffffff;
-  background-image: url("../img/Back.png");
-  background-position: top right;
-  background-repeat:no-repeat;
-
-  width: 50%;
+  background-color:#ddf5e3;
+  width: 100%;
   height: 100%;
   position: absolute;
-  padding: 40px;
   top: 0;
   left: 0;
   overflow: auto;
 }
 
 .data {
-  background: #fa0000c8;
-  background-position: center;
+  background: #ffffff;
   padding: 20px;
   width: 600px;
   height: 800px;
   margin: 50px auto;
   border-radius: 20px;
+}
+
+.input-field {
+  border: 2px solid rgb(7, 83, 24);
+  border-radius: 20px;
+  padding: 10px;
+}
+
+.confirm-button {
+  background: rgb(7, 83, 24);
+  color: rgb(234, 238, 0);
+  border: none;
+  border-radius: 20px;
+  padding: 10px 20px;
+  margin-left: 10px;
+}
+
+.pagination {
+  display: flex;
+}
+
+.page-number, .arrow {
+  padding: 5px 10px;
+  margin: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.arrow {
+  background: #146f99;
+  color: #fff;
+}
+
+.form {
+  padding: auto;
+}
+
+.base-layout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.base-layout > * {
+  margin-bottom: 20px;
+}
+
+.cards-layout {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.card {
+  display: flex;
+  width: 260px;
+  align-items: center;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: #b0dcba;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 10px;
+}
+
+.card-image img {
+  width: 130px;
+  height: 150px;
+  object-fit:fill;
+}
+
+.card-content {
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.card-content h3 {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.card-content p {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.card-content a {
+  display: block;
+  background-color: rgb(41, 137, 62);
+  color: #000000;
+  text-align: center;
+  padding: 8px;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.card-content a:hover {
+  background-color: #2980b9;
+}
+
+.product-base {
+  font-family: Arial, sans-serif;
+  display: flex;
+  align-items: flex-start;
+}
+
+.product-image {
+  height: auto;
+  width: 200px;
+  object-fit:cover;
+}
+
+.product-info {
+  max-width: 50%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+h2 {
+  font-size: 24px;
+  margin-top: 0;
+}
+
+p {
+  font-size: 16px;
+}
+
+.price {
+  font-size: 20px;
+  font-weight: bold;
+  color: green;
 }
 

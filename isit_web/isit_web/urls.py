@@ -20,8 +20,9 @@ from src import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.GetOrders),
+    path('', views.defFilter, name='sendText'),
+    path('index', views.index),
     path('order/<int:id>/', views.GetOrder, name='order_url'),
-    path('sendText', views.sendText, name='sendText'),
+    path('sendText', views.filter, name='sendText'),
     path('task/', views.showTask)
 ]

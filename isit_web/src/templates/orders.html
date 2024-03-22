@@ -3,19 +3,58 @@
 {% block title %}Главная страница{% endblock %}
 
 {% block content %}
-<div class='data'>
-    <ul>
-        {% for order in data.orders %}
+<div class='base-layout'>
+    <a class='title-font'>Магазин Издательства Формат-М</a>
+    <form class='form' action="sendText" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input name="text" type="text" class='input-field' value='{{data.input}}'>
+        <input type="submit" value="Submit" class='confirm-button'>
+    </form>
+    <div class='pagination cards-layout' id='pagination'>
+        {% for order in data.data %}
         {% include 'order_element.html' with element=order %}
         {% empty %}
             <a class='default-font'>Ха-Ха-Ха! Держи гуся!</a>
             <img src="/../static/img/goose.png">
         {% endfor %}
-    </ul>
-    <form action="sendText" method="post" enctype="multipart/form-data">
-        {% csrf_token %}
-        <input name="text" type="text"><br><br>
-        <input type="submit" value="Submit" >
-    </form>
+    </div>
+
+    <script>
+        const totalPages = {{ total_pages }};
+    
+        const pagination = document.getElementById('pagination');
+    
+        for (let i = 1; i <= totalPages; i++) {
+            const pageNumber = document.createElement('span');
+            pageNumber.classList.add('page-number');
+            pageNumber.textContent = i;
+            pagination.appendChild(pageNumber);
+        }
+    
+        function updatePagination() {
+            // Очищаем текущий список страниц
+            pagination.innerHTML = '';
+    
+            for (let i = 1; i <= totalPages; i++) {
+                const pageNumber = document.createElement('span');
+                pageNumber.classList.add('page-number');
+                pageNumber.textContent = i;
+                pagination.appendChild(pageNumber);
+            }
+    
+            // Добавляем стрелочки
+            const prevArrow = document.createElement('span');
+            prevArrow.classList.add('arrow');
+            prevArrow.textContent = '<';
+            pagination.appendChild(prevArrow);
+    
+            const nextArrow = document.createElement('span');
+            nextArrow.classList.add('arrow');
+            nextArrow.textContent = '>';
+            pagination.appendChild(nextArrow);
+        }
+    
+        updatePagination();
+    </script>
 </div>
 {% endblock %}

@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% block title %}Главная страница{% endblock %}
+{% block content %}
+<div class="pagination" id="pagination"></div>
+
+<script>
+    const totalPages = {{ total_pages }};
+
+    const pagination = document.getElementById('pagination');
+
+    for (let i = 1; i <= totalPages; i++) {
+        const pageNumber = document.createElement('span');
+        pageNumber.classList.add('page-number');
+        pageNumber.textContent = i;
+        pagination.appendChild(pageNumber);
+    }
+
+    function updatePagination() {
+        // Очищаем текущий список страниц
+        pagination.innerHTML = '';
+
+        for (let i = 1; i <= totalPages; i++) {
+            const pageNumber = document.createElement('span');
+            pageNumber.classList.add('page-number');
+            pageNumber.textContent = i;
+            pagination.appendChild(pageNumber);
+        }
+
+        // Добавляем стрелочки
+        const prevArrow = document.createElement('span');
+        prevArrow.classList.add('arrow');
+        prevArrow.textContent = '<';
+        pagination.appendChild(prevArrow);
+
+        const nextArrow = document.createElement('span');
+        nextArrow.classList.add('arrow');
+        nextArrow.textContent = '>';
+        pagination.appendChild(nextArrow);
+    }
+
+    updatePagination();
+</script>
+{% endblock %}
+

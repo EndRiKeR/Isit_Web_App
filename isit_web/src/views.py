@@ -15,20 +15,44 @@ def GetOrder(request, id):
         'order': database[id - 1],
     }})
 
-def sendText(request):
-    input_text = request.POST['text']
+def defFilter(request):
+    input_text = 'а'
 
-    print(input_text)
-    if (not input_text.isdigit()):
-        return render(request, 'error.html')
+    filterData = [];
+    for data in database:
+        if input_text.lower() in data.get('title').lower():
+            filterData.append(data)
 
-    print(len(database))
-    
-    num = int(input_text)
     return render(request, 'orders.html', {'data' : {
-        'current_date': date.today(),
-        'orders': database[:min(num, len(database))]
+        'input': input_text,
+        'data': filterData
     }})
+
+def filter(request):
+    input_text = request.POST['text']
+    if input_text == "":
+        input_text = 'а'
+
+    filterData = [];
+    for data in database:
+        if input_text.lower() in data.get('title').lower():
+            filterData.append(data)
+
+    return render(request, 'orders.html', {'data' : {
+        'input': input_text,
+        'data': filterData
+    }})
+
+def index(request):
+    items_per_page = 10
+    total_items = 50
+    total_pages = -(-total_items // items_per_page)  # округление вверх
+
+    return render(request, 'pagination.html', {
+        'total_pages': total_pages,
+        'data' : database
+        })
+
 
 def showTask(request):
     return render(request, 'task.html')

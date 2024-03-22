@@ -1,10 +1,12 @@
-<div>
-    <img src="{{element.src}}" width='160' height='200' alt="картинка">
+<div class="product-base">
     <div>
-        <p class='default-font book-name'>{{ element.title }}.</p>
-        <p class='default-font'>Стоимость: {{ element.price }} руб.</p>
-        <p class='default-font'>Описание: {{ element.desc }} руб.</p>
+        <img class="product-image" src="{{element.src}}" width='120' height='160' alt="Красивая картинка">
+    </div>
+    <div class="product-info">
+        <h3 class='default-font'>{{ element.title }}.</h3>
+        <p class='default-font'>{{ element.price}} рублей</p>
+        <p class='default-font'>Описание:</p>
+        <p class='default-font'>{{ element.desc }}</p>
 
     </div>
-
 </div>
